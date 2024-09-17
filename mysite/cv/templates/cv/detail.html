@@ -1,0 +1,26 @@
+<h1>{{info.first_name}} {{info.last_name}}</h1>
+<div>{{info.phone_number}} | {{info.email}} | {{info.website}} | {{info.city_live_in}}, {{info.country_live_in}}</div>
+
+<h1>Education</h1>
+{% for e in edu %}
+<div><b>{{e.school_name}}</b> | {{e.city_in}}, {{e.country_in}}</div>
+<div>{{e.degree}} {{e.major}} | {{e.study_from}}-{{e.study_to}}</div>
+<br/>
+{% endfor %}
+
+<h1>Work Experience</h1>
+{% for w in wrk %}
+<div><b>{{w.company_name}}</b> | {{w.city_in}}, {{w.country_in}}</div>
+<div>{{w.job_title}} | {{w.work_from}}-{{w.work_to}}</div>
+<br/>
+{{w.job_description}}
+<br/><br/>
+{% endfor %}
+
+<h1>Skills</h1>
+{% for s in skl %}
+<li>{{s.skill_name}} : {{s.skill_description}}</li>
+{% endfor %}
+
+<br/><br/>
+<a href="/cv/">Back to Menu</a>
